@@ -72,7 +72,7 @@
 <body>
   <div class="container">
     <h1>Start Address Change</h1>
-    <form>
+    <form onsubmit="saveAndContinue(event)">
       <label for="name">Your Full Name</label>
       <input type="text" id="name" name="name" required />
 
@@ -87,15 +87,37 @@
 
       <div class="checkbox-group">
         <label>Who should we notify?</label>
-        <label><input type="checkbox" name="services" value="government" /> Government Services</label><br />
-        <label><input type="checkbox" name="services" value="banks" /> Banks & Insurance</label><br />
-        <label><input type="checkbox" name="services" value="internet" /> Phone & Internet</label><br />
-        <label><input type="checkbox" name="services" value="subscriptions" /> Subscriptions & Memberships</label><br />
-        <label><input type="checkbox" name="services" value="family" /> Friends & Family</label><br />
+        <label><input type="checkbox" name="services" value="Government Services" /> Government Services</label><br />
+        <label><input type="checkbox" name="services" value="Banks & Insurance" /> Banks & Insurance</label><br />
+        <label><input type="checkbox" name="services" value="Phone & Internet" /> Phone & Internet</label><br />
+        <label><input type="checkbox" name="services" value="Subscriptions & Memberships" /> Subscriptions & Memberships</label><br />
+        <label><input type="checkbox" name="services" value="Friends & Family" /> Friends & Family</label><br />
       </div>
 
       <button type="submit">Continue</button>
     </form>
   </div>
+
+  <script>
+    function saveAndContinue(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const oldAddress = document.getElementById('old-address').value;
+      const newAddress = document.getElementById('new-address').value;
+      const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
+
+      const formData = {
+        name,
+        email,
+        oldAddress,
+        newAddress,
+        services
+      };
+
+      localStorage.setItem('changePalData', JSON.stringify(formData));
+      window.location.href = 'confirm.html';
+    }
+  </script>
 </body>
 </html>
