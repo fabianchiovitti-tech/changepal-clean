@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Identity - ChangePal</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5faff;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin: 0 auto 20px auto;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Verify Your Identity</h1>
+    <p>Please upload a photo or scan of your government-issued ID.<br>
+    This helps us protect your identity and prevent fraud. Your data is handled securely.</p>
+
+    <form onsubmit="handleUpload(event)">
+      <input type="file" id="idFile" accept="image/*,.pdf" required />
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
+  <script>
+    function handleUpload(event) {
+      event.preventDefault();
+      const fileInput = document.getElementById('idFile');
+      if (fileInput.files.length === 0) {
+        alert('Please select a file.');
+        return;
+      }
+      alert('ID uploaded. You may now proceed.');
+      window.location.href = 'start.html';
+    }
+  </script>
+</body>
+</html>
