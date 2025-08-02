@@ -59,15 +59,25 @@
 <body>
   <div class="container">
     <h1>Confirm Your Details</h1>
-    <div class="summary">
-      <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Email:</strong> johndoe@example.com</p>
-      <p><strong>Old Address:</strong> 123 Old St, Oldtown</p>
-      <p><strong>New Address:</strong> 456 New Ave, Newcity</p>
-      <p><strong>Notify:</strong> Government, Bank, Phone, Subscriptions</p>
-    </div>
-
-    <button>Confirm & Continue</button>
+    <div class="summary" id="summary"></div>
+    <button onclick="alert('Confirmation submitted!')">Confirm & Continue</button>
   </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('changePalData'));
+
+    if (data) {
+      const summaryHTML = \`
+        <p><strong>Name:</strong> \${data.name}</p>
+        <p><strong>Email:</strong> \${data.email}</p>
+        <p><strong>Old Address:</strong> \${data.oldAddress}</p>
+        <p><strong>New Address:</strong> \${data.newAddress}</p>
+        <p><strong>Notify:</strong> \${data.services.join(', ')}</p>
+      \`;
+      document.getElementById('summary').innerHTML = summaryHTML;
+    } else {
+      document.getElementById('summary').innerHTML = "<p style='color:red;'>No data found. Please go back to the start page.</p>";
+    }
+  </script>
 </body>
 </html>
