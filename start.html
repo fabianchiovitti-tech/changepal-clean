@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Address Change - ChangePal</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5faff;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077cc;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .checkbox-group {
+      margin-top: 15px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Start Address Change</h1>
+    <form>
+      <label for="name">Your Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="old-address">Old Address</label>
+      <input type="text" id="old-address" name="old-address" required />
+
+      <label for="new-address">New Address</label>
+      <input type="text" id="new-address" name="new-address" required />
+
+      <div class="checkbox-group">
+        <label>Who should we notify?</label>
+        <label><input type="checkbox" name="services" value="government" /> Government Services</label><br />
+        <label><input type="checkbox" name="services" value="banks" /> Banks & Insurance</label><br />
+        <label><input type="checkbox" name="services" value="internet" /> Phone & Internet</label><br />
+        <label><input type="checkbox" name="services" value="subscriptions" /> Subscriptions & Memberships</label><br />
+        <label><input type="checkbox" name="services" value="family" /> Friends & Family</label><br />
+      </div>
+
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</body>
+</html>
