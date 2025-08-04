@@ -8,75 +8,67 @@
   <style>
     body {
       font-family: sans-serif;
-      background: #f5faff;
-      padding: 40px;
+      background: #f0f8ff;
       margin: 0;
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 50px 40px;
+    .card {
+      background: white;
+      padding: 40px;
+      max-width: 500px;
+      margin: 0 auto 30px auto;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      text-align: center;
     }
 
     h1 {
       color: #0077cc;
-      margin-bottom: 20px;
-    }
-
-    .price-box {
-      font-size: 20px;
       margin-bottom: 30px;
     }
 
-    .plan-label {
-      font-weight: bold;
-      font-size: 22px;
+    h2 {
+      color: #222;
+      margin: 10px 0;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #0070f3;
-      color: #fff;
+    p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: #0077cc;
+      color: white;
       border: none;
       border-radius: 8px;
-      text-decoration: none;
+      font-size: 16px;
       cursor: pointer;
     }
 
-    .button:hover {
-      background-color: #005dc1;
-    }
-
-    .note {
-      font-size: 14px;
-      margin-top: 20px;
-      color: #444;
+    button:hover {
+      background: #005fa3;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Secure Payment</h1>
-    <div class="price-box">
-      <div class="plan-label">Premium Plan</div>
-      Unlimited address updates<br />
-      <strong>$34.99 CAD</strong>
-    </div>
+  <h1>Secure Payment</h1>
 
-    <a href="done.html" class="button">Pay Now</a>
+  <div class="card">
+    <h2>Standard Plan</h2>
+    <p>3 address updates</p>
+    <p><strong>$19.99 CAD</strong></p>
+    <button>Pay Now</button>
+  </div>
 
-    <div class="note">
-      This is a placeholder for a secure Stripe checkout.<br />
-      You won’t be charged — this is a mock payment page for demo purposes.
-    </div>
+  <div class="card">
+    <h2>Premium Plan</h2>
+    <p>Unlimited address updates</p>
+    <p><strong>$34.99 CAD</strong></p>
+    <button>Pay Now</button>
   </div>
 </body>
 </html>
