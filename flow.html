@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChangePal Flow Map</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5faff;
+      padding: 40px;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #0077cc;
+      margin-bottom: 40px;
+    }
+
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      font-size: 18px;
+    }
+
+    .step {
+      background: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border: 2px solid #0077cc;
+      width: 300px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+
+    .step a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    .arrow {
+      font-size: 24px;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>ChangePal Flow Map</h1>
+  <div class="flow">
+    <div class="step"><a href="index.html">Homepage</a></div>
+    <div class="arrow">⬇</div>
+    <div class="step"><a href="pay.html">Payment (Standard or Premium)</a></div>
+    <div class="arrow">⬇</div>
+    <div class="step"><a href="verify.html">Verify Identity (ID Upload)</a></div>
+    <div class="arrow">⬇</div>
+    <div class="step"><a href="start.html">Enter Address Info</a></div>
+    <div class="arrow">⬇</div>
+    <div class="step"><a href="confirm.html">Confirm Details</a></div>
+    <div class="arrow">⬇</div>
+    <div class="step"><a href="done.html">You're All Set</a></div>
+  </div>
+</body>
+</html>
