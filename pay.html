@@ -38,7 +38,13 @@
       font-size: 16px;
     }
 
-    a button {
+    .consent {
+      margin: 20px auto;
+      max-width: 500px;
+      font-size: 14px;
+    }
+
+    button {
       margin-top: 15px;
       padding: 12px 24px;
       background: #0077cc;
@@ -47,13 +53,28 @@
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    a {
+      color: #0077cc;
       text-decoration: none;
     }
 
-    a button:hover {
-      background: #005fa3;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
+  <script>
+    function toggleButtons(checkbox) {
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach(btn => btn.disabled = !checkbox.checked);
+    }
+  </script>
 </head>
 <body>
   <h1>Secure Payment</h1>
@@ -62,14 +83,21 @@
     <h2>Standard Plan</h2>
     <p>3 address updates</p>
     <p><strong>$19.99 CAD</strong></p>
-    <a href="confirm.html"><button>Pay Now</button></a>
+    <a href="confirm.html"><button disabled>Pay Now</button></a>
   </div>
 
   <div class="card">
     <h2>Premium Plan</h2>
     <p>Unlimited address updates</p>
     <p><strong>$34.99 CAD</strong></p>
-    <a href="confirm.html"><button>Pay Now</button></a>
+    <a href="confirm.html"><button disabled>Pay Now</button></a>
+  </div>
+
+  <div class="consent">
+    <input type="checkbox" id="accept" onchange="toggleButtons(this)">
+    <label for="accept">
+      I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="terms.html#privacy" target="_blank">Privacy Policy</a>
+    </label>
   </div>
 </body>
 </html>
