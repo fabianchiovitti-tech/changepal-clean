@@ -32,6 +32,9 @@
       transform: scale(1.2);
       margin-right: 10px;
     }
+    input[type="file"] {
+      margin-top: 10px;
+    }
     button {
       padding: 12px 24px;
       font-size: 16px;
@@ -66,11 +69,13 @@
 
     <p>To allow us to submit your address changes, please sign and return the mandate form:</p>
     <p><a href="changepal_mandate_form.pdf" target="_blank">📄 Download ChangePal Mandate Form</a></p>
-    <p>Email the signed form to: <strong>support@changepal.ca</strong></p>
+
+    <p>Upload your signed form:</p>
+    <input type="file" accept=".pdf,image/*" /><br><br>
 
     <label>
       <input type="checkbox" onchange="toggleContinue(this)" />
-      I understand this form must be signed for ChangePal to act on my behalf.
+      I understand this form must be signed and uploaded for ChangePal to act on my behalf.
     </label>
 
     <br>
