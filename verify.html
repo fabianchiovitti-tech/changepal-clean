@@ -2,100 +2,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Verify Identity - ChangePal</title>
-  <script src="https://unpkg.com/uploadthing@latest/dist/uploadthing.umd.js"></script>
+  <title>Verify Your Identity - ChangePal</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #f0f8ff;
-      padding: 40px;
-      text-align: center;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #ffffff;
       color: #222;
     }
-    .container {
+    header {
+      background-color: #d52b1e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+    }
+    .main {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .main p {
+      font-size: 16px;
+      margin-bottom: 30px;
       max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 500px;
       margin: 0 auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
-    h1 {
-      color: #0077cc;
-    }
-    label, p {
+    input, textarea {
+      padding: 12px;
       font-size: 16px;
-      margin: 15px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
-    input[type="checkbox"] {
-      transform: scale(1.2);
-      margin-right: 10px;
-    }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      background: #0077cc;
+    .btn {
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #004b87;
       color: white;
       border: none;
-      border-radius: 8px;
-      margin-top: 20px;
+      border-radius: 6px;
       cursor: pointer;
     }
-    button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
+    .btn:hover {
+      background-color: #00345f;
     }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .ut-button {
-      margin-top: 10px;
+    footer {
+      background-color: #f2f2f2;
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>Verify Your Identity</h1>
-    <p>Please upload a clear photo or scan of your government-issued ID.</p>
-    <input type="file" accept="image/*,.pdf" /><br><br>
+    <p>Upload your ID and signed mandate form to continue.</p>
+  </header>
 
-    <p>To allow us to submit your address changes, please sign and return the mandate form:</p>
-    <p><a href="changepal_mandate_form.pdf" target="_blank">📄 Download ChangePal Mandate Form</a></p>
+  <section class="main">
+<p><a href="index.html" class="btn">Return to Homepage</a></p>
+  </section>
 
-    <p>Upload your signed mandate form below:</p>
-    <div id="uploader"></div>
-
-    <label>
-      <input type="checkbox" id="consentBox" onchange="toggleContinue(this)" />
-      I understand this form must be signed and uploaded for ChangePal to act on my behalf.
-    </label>
-
-    <br>
-    <a href="start.html">
-      <button id="continueBtn" disabled>Continue</button>
-    </a>
-  </div>
-
-  <script>
-    function toggleContinue(checkbox) {
-      document.getElementById('continueBtn').disabled = !checkbox.checked;
-    }
-
-    window.uploadthing.createWidget({
-      container: "#uploader",
-      type: "manual",
-      uploadthingId: "mandate-upload",
-      showFinishButton: true,
-      acceptedFileTypes: ["image/*", ".pdf"],
-      maxFileCount: 1,
-      onUploadComplete: (files) => {
-        alert("✅ File uploaded successfully!");
-      }
-    });
-  </script>
+  <footer>
+    This service complies with PIPEDA and Canadian data privacy laws.
+  </footer>
 </body>
 </html>
