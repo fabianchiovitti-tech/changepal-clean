@@ -2,73 +2,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You're All Set - ChangePal</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're All Set! - ChangePal</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #f5faff;
-      padding: 40px;
       margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #ffffff;
+      color: #222;
     }
-
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 50px 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    header {
+      background-color: #d52b1e;
+      color: white;
+      padding: 40px 20px;
       text-align: center;
     }
-
-    h1 {
-      color: #0077cc;
-      margin-bottom: 20px;
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
-
-    p {
+    header p {
       font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 20px;
     }
-
-    .support {
+    .main {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .main p {
       font-size: 16px;
-      margin-top: 30px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .support a {
-      color: #0077cc;
-      text-decoration: none;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
     }
-
-    .privacy-note {
-      margin-top: 30px;
-      font-size: 15px;
-      color: #444;
-      background: #eef8ff;
-      padding: 15px;
-      border-radius: 8px;
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #004b87;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #00345f;
+    }
+    footer {
+      background-color: #f2f2f2;
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>You're All Set!</h1>
-    <p>Thank you for using ChangePal. We've received your address change details and will begin processing your notifications shortly.</p>
-    <p>You'll receive a confirmation once everything has been sent out.</p>
+    <p>We’ve received your submission and are processing your address changes.</p>
+  </header>
 
-    <div class="privacy-note">
-      ✅ <strong>Your privacy matters:</strong><br />
-      All personal data (including your ID) will be securely deleted as soon as your address change is complete.
-    </div>
+  <section class="main">
+<p><a href="index.html" class="btn">Return to Homepage</a></p>
+  </section>
 
-    <div class="support">
-      Need help or have questions? <br />
-      <a href="mailto:support@changepal.ca">Contact our support team</a>
-    </div>
-  </div>
+  <footer>
+    This service complies with PIPEDA and Canadian data privacy laws.
+  </footer>
 </body>
 </html>
