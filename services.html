@@ -3,64 +3,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Canadian Address Change Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Who We Notify - ChangePal</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #f4faff;
-      padding: 40px;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #ffffff;
       color: #222;
     }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    header {
+      background-color: #d52b1e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
     }
-
-    h1 {
-      color: #0077cc;
-      margin-bottom: 30px;
+    header h1 {
+      font-size: 32px;
+      margin: 0;
     }
-
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #004b87;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .category {
+      margin-bottom: 40px;
+    }
     ul {
-      line-height: 1.8;
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
     }
-
-    a {
-      color: #0077cc;
-      text-decoration: none;
+    li {
+      padding: 10px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #eee;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    p {
-      margin-bottom: 30px;
+    footer {
+      background-color: #f2f2f2;
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Major Canadian Address Change Portals</h1>
-    <p>Use the links below to access the official address change pages for the most common services in Canada.</p>
-    <ul>
-      <li>🇨🇦 <strong>Government of Canada (CRA / Service Canada)</strong> — <a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/change-my-address.html" target="_blank">Change your address here</a></li>
-      <li>⚡ <strong>Hydro-Québec</strong> — <a href="https://www.hydroquebec.com/residential/customer-space/move/" target="_blank">Notify Hydro-Québec</a></li>
-      <li>📞 <strong>Bell Canada</strong> — <a href="https://www.bell.ca/Billing-and-Accounts/Moving" target="_blank">Bell Move Service</a></li>
-      <li>📦 <strong>Canada Post (Mail Forwarding)</strong> — <a href="https://www.canadapost-postescanada.ca/cpc/en/personal/receiving/mail-forwarding.page" target="_blank">Set up mail forwarding</a></li>
-      <li>💳 <strong>RBC</strong> — <a href="https://www.rbcroyalbank.com/personal.html" target="_blank">Log in to change address</a></li>
-      <li>🏦 <strong>TD Bank</strong> — <a href="https://easyweb.td.com/" target="_blank">Login to EasyWeb</a></li>
-      <li>🚗 <strong>SAAQ (Quebec driver's license & car)</strong> — <a href="https://saaq.gouv.qc.ca/en/online-services/address-change/" target="_blank">SAAQ Change of Address</a></li>
-      <li>🏠 <strong>Revenu Québec</strong> — <a href="https://www.revenuquebec.ca/en/citizens/your-situation/change-of-address/" target="_blank">Change with Revenu Québec</a></li>
-    </ul>
-    <p>More links coming soon...</p>
-    <p><a href="index.html">← Back to Homepage</a></p>
-  </div>
+  <header>
+    <h1>Who We Notify For You</h1>
+  </header>
+
+  <section class="section">
+    <div class="category">
+      <h2>🏛 Government of Quebec</h2>
+      <ul>
+        <li>Revenu Québec</li>
+        <li>RAMQ (Health Card)</li>
+        <li>SAAQ (Driver & Vehicle)</li>
+        <li>Élections Québec</li>
+        <li>Retraite Québec</li>
+        <li>CNESST</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>🔌 Utilities & Telecom</h2>
+      <ul>
+        <li>Hydro-Québec</li>
+        <li>Énergir</li>
+        <li>Bell</li>
+        <li>Videotron</li>
+        <li>Rogers</li>
+        <li>Telus</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>🏦 Banks & Insurance</h2>
+      <ul>
+        <li>Desjardins</li>
+        <li>National Bank</li>
+        <li>TD, RBC, Scotiabank, CIBC</li>
+        <li>Beneva, SSQ, Canada Life</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>📬 Optional</h2>
+      <ul>
+        <li>Canada Post (Mail Forwarding – extra fee)</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This service complies with PIPEDA and Canadian data privacy laws.
+  </footer>
 </body>
 </html>
