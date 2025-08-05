@@ -2,71 +2,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Address Change - ChangePal</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Start Your Address Change - ChangePal</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #e6f3ff;
       margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #ffffff;
+      color: #222;
     }
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 100%;
+    header {
+      background-color: #d52b1e;
+      color: white;
+      padding: 40px 20px;
       text-align: center;
     }
-    h1 {
-      color: #0077cc;
+    header h1 {
+      font-size: 32px;
       margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+    }
+    .main {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .main p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     form {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
     }
     input, textarea {
       padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
     }
-    button {
-      padding: 12px;
-      background-color: #0077cc;
+    .btn {
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #004b87;
       color: white;
-      font-size: 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #005fa3;
+    .btn:hover {
+      background-color: #00345f;
+    }
+    footer {
+      background-color: #f2f2f2;
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>Start Your Address Change</h1>
-    <p>Fill out your details below to begin the process.</p>
-    <form action="verify.html">
-      <input type="text" name="fullName" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <input type="text" name="oldAddress" placeholder="Old Address" required>
-      <input type="text" name="newAddress" placeholder="New Address" required>
+    <p>Fill out your details to begin the process.</p>
+  </header>
+
+  <section class="main">
+
+    <form action="verify.html" method="get">
+      <input type="text" name="fullName" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="oldAddress" placeholder="Old Address" required />
+      <input type="text" name="newAddress" placeholder="New Address" required />
       <textarea name="services" placeholder="Which services to update (e.g. SAAQ, Hydro, Bell)" rows="3"></textarea>
-      <button type="submit">Continue</button>
+      <button type="submit" class="btn">Continue</button>
     </form>
-  </div>
+
+  </section>
+
+  <footer>
+    This service complies with PIPEDA and Canadian data privacy laws.
+  </footer>
 </body>
 </html>
