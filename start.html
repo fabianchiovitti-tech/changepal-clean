@@ -2,68 +2,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Start Address Change - ChangePal</title>
   <style>
     body {
       font-family: sans-serif;
-      background: #f5faff;
-      padding: 40px;
+      background: #e6f3ff;
       margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-
     .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
+      background: white;
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
-
-    h1 {
-      text-align: center;
-      color: #0077cc;
-      margin-bottom: 30px;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"] {
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 500px;
       width: 100%;
-      padding: 10px;
+      text-align: center;
+    }
+    h1 {
+      color: #0077cc;
       margin-bottom: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 12px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
     }
-
-    .checkbox-group {
-      margin-top: 15px;
-    }
-
-    .checkbox-group label {
-      font-weight: normal;
-    }
-
     button {
-      margin-top: 30px;
-      width: 100%;
-      padding: 15px;
-      font-size: 18px;
+      padding: 12px;
       background-color: #0077cc;
       color: white;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
     }
-
     button:hover {
       background-color: #005fa3;
     }
@@ -71,53 +57,16 @@
 </head>
 <body>
   <div class="container">
-    <h1>Start Address Change</h1>
-    <form onsubmit="saveAndContinue(event)">
-      <label for="name">Your Full Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="old-address">Old Address</label>
-      <input type="text" id="old-address" name="old-address" required />
-
-      <label for="new-address">New Address</label>
-      <input type="text" id="new-address" name="new-address" required />
-
-      <div class="checkbox-group">
-        <label>Who should we notify?</label>
-        <label><input type="checkbox" name="services" value="Government Services" /> Government Services</label><br />
-        <label><input type="checkbox" name="services" value="Banks & Insurance" /> Banks & Insurance</label><br />
-        <label><input type="checkbox" name="services" value="Phone & Internet" /> Phone & Internet</label><br />
-        <label><input type="checkbox" name="services" value="Subscriptions & Memberships" /> Subscriptions & Memberships</label><br />
-        <label><input type="checkbox" name="services" value="Friends & Family" /> Friends & Family</label><br />
-      </div>
-
+    <h1>Start Your Address Change</h1>
+    <p>Fill out your details below to begin the process.</p>
+    <form action="verify.html">
+      <input type="text" name="fullName" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="oldAddress" placeholder="Old Address" required>
+      <input type="text" name="newAddress" placeholder="New Address" required>
+      <textarea name="services" placeholder="Which services to update (e.g. SAAQ, Hydro, Bell)" rows="3"></textarea>
       <button type="submit">Continue</button>
     </form>
   </div>
-
-  <script>
-    function saveAndContinue(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const oldAddress = document.getElementById('old-address').value;
-      const newAddress = document.getElementById('new-address').value;
-      const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
-
-      const formData = {
-        name,
-        email,
-        oldAddress,
-        newAddress,
-        services
-      };
-
-      localStorage.setItem('changePalData', JSON.stringify(formData));
-      window.location.href = 'confirm.html';
-    }
-  </script>
 </body>
 </html>
