@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Where We Notify</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .filters { margin: 1rem 0; }
+    .filters button {
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .filters button.active {
+      background: #000;
+      color: #fff;
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .category { font-size: 0.85rem; color: #777; }
+  </style>
+</head>
+<body>
+  <h1>Where We Notify</h1>
+  <p>We take care of notifying these places when you move.</p>
+
+  <div class="filters">
+    <button class="active" onclick="filterCategory('All')">All</button>
+    <button onclick="filterCategory('Government')">Government</button>
+    <button onclick="filterCategory('Utilities')">Utilities</button>
+    <button onclick="filterCategory('Financial')">Financial</button>
+    <button onclick="filterCategory('Others')">Others</button>
+  </div>
+
+  <input type="text" id="searchBox" placeholder="Search..." onkeyup="filterList()"/>
+
+  <div id="listContainer"></div>
+
+  <script>
+    const data = [
+      { name: "Canada Post", category: "Government" },
+      { name: "Service Canada", category: "Government" },
+      { name: "CRA (Canada Revenue Agency)", category: "Government" },
+      { name: "Provincial Health Card", category: "Government" },
+      { name: "Driver’s Licence & Vehicle Registration", category: "Government" },
+      { name: "Elections Canada", category: "Government" },
+      { name: "Hydro-Québec", category: "Utilities" },
+      { name: "Hydro One", category: "Utilities" },
+      { name: "Enbridge", category: "Utilities" },
+      { name: "Énergir", category: "Utilities" },
+      { name: "Bell", category: "Utilities" },
+      { name: "Rogers", category: "Utilities" },
+      { name: "Videotron", category: "Utilities" },
+      { name: "Internet providers", category: "Utilities" },
+      { name: "Mobile providers", category: "Utilities" },
+      { name: "RBC", category: "Financial" },
+      { name: "TD", category: "Financial" },
+      { name: "BMO", category: "Financial" },
+      { name: "Scotiabank", category: "Financial" },
+      { name: "CIBC", category: "Financial" },
+      { name: "Desjardins", category: "Financial" },
+      { name: "Credit Cards", category: "Financial" },
+      { name: "Insurance Companies", category: "Financial" },
+      { name: "Schools", category: "Others" },
+      { name: "Employers", category: "Others" },
+      { name: "Landlord / Rental Agency", category: "Others" },
+      { name: "Subscription Services", category: "Others" }
+    ];
+
+    let currentCategory = "All";
+
+    function filterCategory(category) {
+      currentCategory = category;
+      document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
+      event.target.classList.add("active");
+      filterList();
+    }
+
+    function filterList() {
+      const search = document.getElementById("searchBox").value.toLowerCase();
+      const container = document.getElementById("listContainer");
+      container.innerHTML = "";
+
+      const filtered = data.filter(item =>
+        (currentCategory === "All" || item.category === currentCategory) &&
+        item.name.toLowerCase().includes(search)
+      );
+
+      for (const item of filtered) {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `<strong>${item.name}</strong><div class="category">${item.category}</div>`;
+        container.appendChild(div);
+      }
+    }
+
+    filterList(); // initialize
+  </script>
+</body>
+</html>
